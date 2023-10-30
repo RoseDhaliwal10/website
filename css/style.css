@@ -1,0 +1,436 @@
+*, *::before, *::after {
+
+    box-sizing: border-box;
+    
+    margin: 0;
+    
+    padding: 0;
+    
+    }
+    
+    
+    
+    .dark-mode {
+    
+    background-color: #333 !important;
+    
+    color: #f0f0f0 !important;
+    
+    transition: all 0.4s ease-in !important;
+    
+    }
+    
+    
+    .toggle-switch {
+            position: fixed;
+            width: 3.75rem;
+            height: 2.13rem;
+            color: #efefef;
+            background-color:#E80000;
+            border: 1px solid #E80000;
+            border-radius: 50%;
+            bottom: 60px;
+            right: 20px;
+            outline: none;
+            cursor: pointer;
+            z-index: 999;
+        
+    
+    }
+    
+    
+    .toggle-switch input {
+    
+    opacity: 0;
+    
+    width: 0;
+    
+    height: 0;
+    
+    }
+    
+    
+    .slider {
+    
+    position: absolute;
+    
+    cursor: pointer;
+    
+    top: 0;
+    
+    left: 0;
+    
+    right: 0;
+    
+    bottom: 0;
+    
+    background-color: #ccc;
+    
+    transition: all 0.4s ease-in;
+    
+    border-radius: 2.13rem;
+    
+    }
+    
+    
+    .slider:before {
+    
+    position: absolute;
+    
+    content: "";
+    
+    height: 1.63rem;
+    
+    width: 1.63rem;
+    
+    left: 0.25rem;
+    
+    bottom: 0.25rem;
+    
+    background-color: white;
+    
+    transition: 0.4s;
+    
+    border-radius: 50%;
+    
+    }
+    
+    
+    input:checked + .slider {
+    
+    background-color: #2196f3;
+    
+    }
+    
+    
+    input:focus + .slider {
+    
+    box-shadow: 0 0 2px #2196f3;
+    
+    }
+    
+    
+    input:checked + .slider:before {
+    
+    transform: translateX(1.63rem);
+    
+    }
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    
+    }
+    
+    
+    header {
+    
+    display: grid;
+    
+    grid-template-columns: 75% 25%;
+    
+    border-style: dotted;
+    padding-top: 50px;
+    
+    }
+    
+    
+    .grid-item1 {
+    
+    
+    
+    background-color: transparent;
+    
+    text-align: center;
+
+    
+    
+    }
+    
+    
+    .grid-image {
+    
+    width: 23vw;
+    
+    }
+    
+    
+    .main {
+    
+    font-size: 16;
+    
+    background-color: #ccc;
+    
+    color: #3E4B70;
+    
+    background-size: cover;
+    
+    padding: 50px 50px 50px 60px
+    
+    }
+    
+    
+    .welcome,
+    
+    .about,
+    
+    .overview,
+    
+    .blog {
+    
+    background-color: transparent;
+    
+    padding: 20px;
+    
+    border-style: none none solid none;
+    
+    border-color: purple;
+    
+    }
+    
+    
+    .welcome h3,
+    
+    .about h3,
+    
+    .blog h3,
+    
+    .overview h3 {
+    
+    text-align: center;
+    
+    }
+    
+    
+    footer {
+    
+    color: #3E4B70;
+    
+    padding: 75px;
+    
+    text-align: center;
+    
+    background-color: #ccc;
+    
+    }
+
+    @keyframes rotation{
+
+        0%{rotate: 10deg;}
+        
+        50%{rotate: -10deg;}
+        
+        100%{rotate: 0deg; }
+        
+        }
+
+@keyframes translation{
+    0%{transform:translate(200px, 0);}
+    100%{transform: translate(0,0);}
+    
+}
+
+@keyframes r-trans{
+    0%{transform:translate(-200px, 0);}
+    100%{transform: translate(0,0);}
+    
+}
+
+.h1-relative{
+    position: relative;
+    color:#3E4B70;
+    animation-name: rotation;
+    animation-duration: 3s;
+}
+    .h1-relative::after{
+        content: "";
+position: absolute;
+border: 0;
+width: 180px;
+height: 3px;
+background: purple;
+z-index: 1;
+right: 0;
+left: 0;
+top: 45px;
+margin: 0 auto;
+text-align: center;
+}
+
+
+  
+.navbar{
+    position: fixed !important;    
+    top: 0; 
+    overflow: hidden;
+    width: 100%;
+    background-color: #ccc;
+    align-items: end;
+}
+
+.move,
+.H-class,
+.TE-class{
+    animation-name: r-trans;
+    animation-duration: 3s;
+}
+
+.IE-class,
+.WG-class,
+.PA-class{
+    animation-name: translation;
+    animation-duration: 3s;
+}
+
+.IE-class:hover,
+.WG-class:hover,
+.PA-class:hover,
+.move:hover,
+.H-class:hover,
+.TE-class:hover{
+    transform:scale(1.07);
+
+transition:all 2s ease;
+}
+
+@media  screen and (max-width:576px) {
+
+    .IE-class:hover,
+.WG-class:hover,
+.PA-class:hover,
+.move:hover,
+.H-class:hover,
+.TE-class:hover{
+    transform:scale(1.04);
+
+transition:all 2s ease;
+}
+}
+
+@media  screen and (min-width:776px){
+
+
+}
+
+
+/* Write your CSS below */
+
+
+
+#slider {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+#slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+#slider img.active {
+  opacity: 1;
+}
+
+/*button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #717171;
+  color: #f1f1f1;
+  font-size: 32px;
+  font-stretch: condensed;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}*/
+
+button:hover {
+  background-color: steelblue;
+}
+
+button#prev {
+  left: -35px;
+  padding: 7px 17px 7px 15px;
+}
+
+button#next {
+  right: -35px;
+  padding: 7px 15px 7px 17px;
+}
+
+    
+    /************************************/
+    #form-submitted-msg {
+      margin-bottom: 3rem;
+      border-radius: 3px;
+      background-color: rgb(67, 161, 67);
+      padding: 0.5rem;
+      width: 40%;
+      text-align: center;
+      color: #fff;
+      display: none;
+    }
+    
+    #exampleForm {
+      width: 40%;
+    }
+    
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .input-group:not(.radio):not(.checkbox) {
+      gap: 0.25rem;
+      flex-direction: column;
+    }
+    
+    .input-group:not(.radio):not(.checkbox) input {
+      width: 100%;
+      border-radius: 0.375rem !important;
+    }
+    
+    .input-group.checkbox {
+      gap: 1rem;
+    }
+    
+    .input-group.radio {
+      display: flex;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    
+    .input-group.select select {
+      width: 100%;
+    }
+    
+    legend {
+      font-size: 1rem;
+      width: max-content;
+    }
+    
+    .form-btns {
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    
+    .form-btns > button {
+      padding: 0.3rem 1.5rem;
+    }
+    
+    .form-btns > .submit {
+      padding-inline: 3rem;
+    }
+    
+    .error-msg {
+      display: none;
+    }

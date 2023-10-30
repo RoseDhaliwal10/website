@@ -1,0 +1,89 @@
+
+/* Write your CSS below */
+
+
+.project{
+  width:100%;
+  text-align: center;
+  margin-top:75px;
+  place-content: center;
+  display: grid;
+
+}
+.calculator {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+#slider {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+#slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+#slider img.active {
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #717171;
+  color: #f1f1f1;
+  font-size: 32px;
+  font-stretch: condensed;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: steelblue;
+}
+
+button#prev {
+  left: -35px;
+  padding: 7px 17px 7px 15px;
+}
+
+button#next {
+  right: -35px;
+  padding: 7px 15px 7px 17px;
+}
+
+.submit{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
